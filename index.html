@@ -2,182 +2,122 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portofolio Web Developer oleh [Nama Anda].">
-  <title>M Rayhan Rizki | Portofolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portofolio Web Developer oleh M Rayhan Rizki.">
+    <title>M Rayhan Rizki | Portofolio</title>
 
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 </head>
 
 <body>
+    <header>
+        <nav class="container">
+            <a href="#home" class="logo">M Rayhan Rizki | Portofolio</a>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#certificates" class="nav-link">Certificates</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-  <header>
-    <nav class="container">
-      <a href="#home" class="logo">M Rayhan Rizki | Portofolio</a>
-      <ul class="nav-links">
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#certificates" class="nav-link">Certificates</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-      <div class="hamburger">
-        <i class="fas fa-bars"></i>
-      </div>
-    </nav>
-  </header>
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content container">
+                <h1 class="reveal">Halo, Saya Mohammad Rayhan Rizki</h1>
+                <p class="reveal" data-delay="200"><span id="tagline"></span><span class="cursor">&nbsp;</span></p>
+                <div class="social-links reveal" data-delay="400">
+                    <a href="https://github.com/mohammadrayhanrizki" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/mohammad-rayhan-rizki-27a45332a/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/reyzr12/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </section>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-content container">
-        <h1 class="reveal">Halo, Saya Mohammad Rayhan Rizki</h1>
-        <p class="reveal" data-delay="200">Seorang Web Developer & Cybersecurity Enthusiast</p>
-        <div class="social-links reveal" data-delay="400">
-          <a href="https://github.com/mohammadrayhanrizki" target="_blank" aria-label="GitHub"><i
-              class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/mohammad-rayhan-rizki-27a45332a/" target="_blank"
-            aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.instagram.com/reyzr12/" target="_blank" aria-label="Instagram"><i
-              class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-    </section>
+        <section class="about" id="about">
+            <div class="container about-content reveal">
+                <div class="about-image">
+                    <img src="./img/rey foto.jpg" alt="Foto Profil M Rayhan Rizki">
+                </div>
+                <div class="about-text">
+                    <h2>Tentang Saya</h2>
+                    <p>Saya adalah seorang pelajar yang bersemangat dalam dunia teknologi, dengan fokus pada pengembangan web dan keamanan siber. Saya senang belajar hal baru dan mengubah ide menjadi aplikasi web yang fungsional, menarik, dan aman.</p>
+                </div>
+            </div>
+        </section>
 
-    <section class="about" id="about">
-      <div class="container about-content reveal">
-        <div class="about-image">
-          <img src="./img/rey foto.jpg" alt="Foto Profil M Rayhan Rizki">
-        </div>
-        <div class="about-text">
-          <h2>Tentang Saya</h2>
-          <p>Saya adalah seorang pelajar yang bersemangat dalam dunia teknologi, dengan fokus pada pengembangan web dan
-            keamanan siber. Saya senang belajar hal baru dan mengubah ide menjadi aplikasi web yang fungsional, menarik,
-            dan aman.</p>
-        </div>
-      </div>
-    </section>
+        <section class="projects" id="projects">
+            <div class="container">
+                <h2 class="reveal">Proyek Saya</h2>
+                <div class="project-grid">
+                    <div class="project-card reveal">
+                        <img src="./img/project-1.png" alt="Gambar Proyek GGJ">
+                        <h3>GGJ | Project</h3>
+                        <p>Singkat cerita sebuah bubble gum tak bertuan berkelana untuk mencari tempat sampah. hindari tembok jika ingin selamat, berhati - hati lah dengan angin dari fan dan jebakan lainnya.</p>
+                        <div class="project-links">
+                            <a href="https://hibaphd.itch.io/bubblegum-going-to-trash" target="_blank">Live Demo</a>
+                            <a href="https://hibaphd.itch.io/bubblegum-going-to-trash" target="_blank">Source Code</a>
+                        </div>
+                    </div>
+                    <div class="project-card reveal" data-delay="200">
+                        <img src="./img/project-2.png" alt="Gambar Proyek BookSelf Apps">
+                        <h3>BookSelf Apps</h3>
+                        <p>Rak Buku Digital adalah sebuah aplikasi web sederhana yang berfungsi sebagai rak buku virtual untuk mengelola daftar bacaan pribadi, dibangun sepenuhnya menggunakan HTML, CSS, dan vanilla JS.</p>
+                        <div class="project-links">
+                            <a href="https://bookself-apps-ucno.vercel.app/" target="_blank">Live Demo</a>
+                            <a href="https://github.com/mohammadrayhanrizki/Bookself-Apps.git" target="_blank">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section class="projects" id="projects">
-      <div class="container">
-        <h2 class="reveal">Proyek Saya</h2>
-        <div class="project-grid">
-          <div class="project-card reveal">
-            <img src="./img/project-1.png" alt="Gambar Proyek 1">
-            <h3>GGJ | Project</h3>
-            <p>Singkat cerita sebuah bubble gum tak bertuan berkelana untuk mencari tempat sampah. hindari tembok jika
-              ingin selamat, berhati - hati lah dengan angin dari fan dan jebakan lainnya.untuk mekanisme pengendalian
-              karakter menggunakan mouse/kursor.</p>
-            <div class="project-links">
-              <a href="https://hibaphd.itch.io/bubblegum-going-to-trash" target="_blank">Live Demo</a>
-              <a href="https://hibaphd.itch.io/bubblegum-going-to-trash" target="_blank">Source Code</a>
+        <section class="certificates" id="certificates">
+            <div class="container">
+                <h2 class="reveal">Sertifikat Saya</h2>
+                <div class="certificate-grid">
+                    <div class="certificate-item reveal"><img src="./img/sertif-1.jpg" alt="Sertifikat Cyber Security Analyst"><div class="overlay"><h3>Kenal Profesi Cyber Security Analyst</h3><p>Diberikan oleh LatiHacks</p></div></div>
+                    <div class="certificate-item reveal" data-delay="200"><img src="./img/sertif-2.jpg" alt="Sertifikat Cyber Security Engineer"><div class="overlay"><h3>Kenal Profesi Cyber Security Engineer</h3><p>Diberikan oleh LatiHacks</p></div></div>
+                    <div class="certificate-item reveal" data-delay="400"><img src="./img/sertif-3.jpg" alt="Sertifikat Network & CyberSecurity Workshop"><div class="overlay"><h3>Network & CyberSecurity Workshop</h3><p>Diberikan oleh CyberShield x HackPoint</p></div></div>
+                    <div class="certificate-item reveal"><img src="./img/sertif-4.jpg" alt="Sertifikat Global Game Jam"><div class="overlay"><h3>Global Game Jam</h3><p>Diberikan oleh GADAS</p></div></div>
+                    <div class="certificate-item reveal" data-delay="200"><img src="./img/sertif-5.jpg" alt="Sertifikat Peserta Welcome ITS"><div class="overlay"><h3>Peserta Welcome ITS</h3><p>Diberikan oleh INI LHO ITS!</p></div></div>
+                    <div class="certificate-item reveal" data-delay="400"><img src="./img/sertif-6.jpg" alt="Sertifikat Short Class Sinau Koding"><div class="overlay"><h3>Short Class Sinau Koding Academy</h3><p>Diberikan oleh Sinau Koding Academy</p></div></div>
+                    <div class="certificate-item reveal"><img src="./img/sertif-7.jpg" alt="Sertifikat Front-End Developer"><div class="overlay"><h3>Front-End Developer</h3><p>Diberikan oleh IITC</p></div></div>
+                    <div class="certificate-item reveal" data-delay="200"><img src="./img/sertif-8.jpg" alt="Sertifikat CyberSecurity LKS Sekolah"><div class="overlay"><h3>CyberSecurity LKS SEKOLAH</h3><p>Diberikan oleh SMK NEGERI 1 SURABAYA</p></div></div>
+                    <div class="certificate-item reveal" data-delay="400"><img src="./img/sertif-9.jpg" alt="Sertifikat CyberSecurity Workshop Narotama"><div class="overlay"><h3>CyberSecurity Workshop</h3><p>Diberikan oleh Narotama University</p></div></div>
+                </div>
             </div>
-          </div>
-          <div class="project-card reveal" data-delay="200">
-            <img src="./img/project-2.png" alt="Gambar Proyek 2">
-            <h3>BookSelf Apps</h3>
-            <p>Rak Buku Digital adalah sebuah aplikasi web sederhana yang berfungsi sebagai rak buku virtual untuk
-              mengelola daftar bacaan pribadi. Aplikasi ini dibangun sepenuhnya menggunakan teknologi front-end dasar:
-              HTML, CSS, dan JavaScript murni (vanilla JS), dengan fokus utama pada manipulasi DOM.</p>
-            <div class="project-links">
-              <a href="https://bookself-apps-ucno.vercel.app/" target="_blank">Live
-                Demo</a>
-              <a href="https://github.com/mohammadrayhanrizki/Bookself-Apps.git" target="_blank">Source Code</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <section class="certificates" id="certificates">
-      <div class="container">
-        <h2 class="reveal">Sertifikat Saya</h2>
-        <div class="certificate-grid">
-          <div class="certificate-item reveal">
-            <img src="./img/sertif-1.jpg" alt="Sertifikat 1">
-            <div class="overlay">
-              <h3>Kenal Profesi Cyber Security Analyst</h3>
-              <p>Diberikan oleh LatiHacks</p>
+        <section class="contact" id="contact">
+            <div class="container contact-content reveal">
+                <h2>Hubungi Saya</h2>
+                <p>Tertarik untuk berkolaborasi atau sekadar menyapa? Saya akan senang mendengar dari Anda!</p>
+                <a href="mailto:mohammadrayhanrizki@gmail.com" class="contact-button">Kirim Email</a>
             </div>
-          </div>
-          <div class="certificate-item reveal" data-delay="200">
-            <img src="./img/sertif-2.jpg" alt="Sertifikat 2">
-            <div class="overlay">
-              <h3>Kenal Profesi Cyber Security Engineer</h3>
-              <p>Diberikan oleh LatiHacks</p>
-            </div>
-          </div>
-          <div class="certificate-item reveal" data-delay="200">
-            <img src="./img/sertif-3.jpg" alt="Sertifikat 3">
-            <div class="overlay">
-              <h3>Network & CyberSecurity Workshop</h3>
-              <p>Diberikan oleh CyberShield x HackPoint</p>
-            </div>
-          </div>
-          <div class="certificate-item reveal" data-delay="200">
-            <img src="./img/sertif-4.jpg" alt="Sertifikat 4">
-            <div class="overlay">
-              <h3>Global Game Jam</h3>
-              <p>Diberikan oleh GADAS</p>
-            </div>
-          </div>
-          <div class="certificate-item reveal" data-delay="200">
-            <img src="./img/sertif-5.jpg" alt="Sertifikat 5">
-            <div class="overlay">
-              <h3>Peserta Welcome ITS</h3>
-              <p>Diberikan oleh INI LHO ITS!</p>
-            </div>
-          </div>
-          <div class="certificate-item reveal" data-delay="200">
-            <img src="./img/sertif-6.jpg" alt="Sertifikat 6">
-            <div class="overlay">
-              <h3>Short Class Sinau Koding Academy</h3>
-              <p>Diberikan oleh Sinau Koding Academy</p>
-            </div>
-          </div>
-          <div class="certificate-item reveal" data-delay="200">
-            <img src="./img/sertif-7.jpg" alt="Sertifikat 7">
-            <div class="overlay">
-              <h3>Front-End Developer</h3>
-              <p>Diberikan oleh IITC</p>
-            </div>
-          </div>
-          <div class="certificate-item reveal" data-delay="200">
-            <img src="./img/sertif-8.jpg" alt="Sertifikat" 8>
-            <div class="overlay">
-              <h3>CyberSecurity LKS SEKOLAH</h3>
-              <p>Diberikan oleh SMK NEGERI 1 SURABAYA</p>
-            </div>
-          </div>
-          <div class="certificate-item reveal" data-delay="200">
-            <img src="./img/sertif-9.jpg" alt="Sertifikat" 8>
-            <div class="overlay">
-              <h3>CyberSecurity Workshop</h3>
-              <p>Diberikan oleh Narotama University</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
+    </main>
 
-    <section class="contact" id="contact">
-      <div class="container contact-content reveal">
-        <h2>Hubungi Saya</h2>
-        <p>Tertarik untuk berkolaborasi atau sekadar menyapa? Saya akan senang mendengar dari Anda!</p>
-        <a href="mailto:mohammadrayhanrizki@gmail.com" class="contact-button">Kirim Email</a>
-      </div>
-    </section>
-  </main>
+    <footer>
+        <p>&copy; 2025 Mohammad Rayhan Rizki</p>
+    </footer>
 
-  <footer>
-    <p>&copy; 2025 mohammad rayhan rizki</p>
-  </footer>
-
-  <script src="script.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>
