@@ -266,6 +266,106 @@ html[data-theme='light'] .certificate-item .overlay {
 .certificate-item .overlay h3 { margin-bottom: 0.25rem; }
 .certificate-item .overlay p { font-size: 0.9rem; color: var(--secondary-color); }
 
+/* ... (Salin semua kode CSS Anda yang sebelumnya di sini) ... */
+
+/* ===== TAMBAHAN UNTUK FORM KONTAK ===== */
+form {
+    max-width: 600px;
+    margin: 2rem auto 0 auto;
+    text-align: left;
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+#form-status {
+    margin-top: 1.5rem;
+    font-weight: 600;
+    min-height: 1.5rem;
+}
+
+/* ===== TAMBAHAN UNTUK MODAL SERTIFIKAT ===== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    align-items: center;
+    justify-content: center;
+}
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80vh;
+}
+.modal-close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.modal-close:hover {
+    color: var(--secondary-color);
+}
+
+/* ===== TAMBAHAN UNTUK CUSTOM CURSOR ===== */
+.cursor-dot, .cursor-outline {
+    pointer-events: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s, transform 0.2s;
+    z-index: 1001;
+}
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-color);
+}
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--primary-color);
+}
+html:hover .cursor-dot, html:hover .cursor-outline {
+    opacity: 1;
+}
+.cursor-grow {
+    transform: translate(-50%, -50%) scale(2);
+    border-color: var(--secondary-color);
+}
+
 @media (max-width: 768px) {
     .logo { font-size: 1.1rem; }
     .nav-links {

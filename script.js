@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggleButton = document.getElementById('theme-toggle');
     const htmlElement = document.documentElement;
 
-    // Fungsi untuk menerapkan tema
     function applyTheme(theme) {
         if (theme === 'light') {
             htmlElement.setAttribute('data-theme', 'light');
@@ -15,17 +14,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // Cek tema yang tersimpan di localStorage saat halaman dimuat
-    const savedTheme = localStorage.getItem('theme') || 'dark'; // Default ke dark
+    const savedTheme = localStorage.getItem('theme') || 'dark';
     applyTheme(savedTheme);
 
-    // Event listener untuk tombol
     themeToggleButton.addEventListener('click', () => {
         const currentTheme = htmlElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
         localStorage.setItem('theme', currentTheme);
         applyTheme(currentTheme);
     });
-
 
     // --- LOGIKA EFEK TYPEWRITER ---
     const taglineElement = document.getElementById('tagline');
@@ -60,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
         type();
     }
 
-
     // --- LOGIKA MENU HAMBURGER ---
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
@@ -71,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburger.querySelector('i').classList.toggle('fa-times');
     });
 
-    // Menutup menu saat link di-klik (untuk single page)
     navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             if (navLinks.classList.contains('active')) {
@@ -81,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
 
     // --- LOGIKA HIGHLIGHT NAV-LINK SAAT SCROLL ---
     const sections = document.querySelectorAll('main section');
@@ -103,6 +96,88 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- LOGIKA MODAL SERTIFIKAT ---
+    const modal = document.getElementById("modal");
+    if (modal) {
+        const modalImg = document.getElementById("modal-img");
+        const certificateItems = document.querySelectorAll(".certificate-item");
+        const closeModal = document.querySelector(".modal-close");
+
+        certificateItems.forEach(item => {
+            item.addEventListener('click', () => {
+                modal.style.display = "flex";
+                modalImg.src = item.querySelector('img').src;
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+    }
+
+    // --- LOGIKA CUSTOM CURSOR ---
+    const cursorDot = document.querySelector(".cursor-dot");
+    const cursorOutline = document.querySelector(".cursor-outline");
+    const interactiveElements = document.querySelectorAll('a, button, .certificate-item');
+
+    window.addEventListener("mousemove", (e) => {
+        const posX = e.clientX;
+        const posY = e.clientY;
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
+        cursorOutline.animate({
+            left: `${posX}px`,
+            top: `${posY}px`
+        }, { duration: 500, fill: "forwards" });
+    });
+    
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseover', () => cursorOutline.classList.add('cursor-grow'));
+        el.addEventListener('mouseleave', () => cursorOutline.classList.remove('cursor-grow'));
+    });
+
+    // --- LOGIKA FORM KONTAK FORMSPREE ---
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        const formStatus = document.getElementById('form-status');
+
+        async function handleSubmit(event) {
+            event.preventDefault();
+            const data = new FormData(event.target);
+            try {
+                const response = await fetch(event.target.action, {
+                    method: contactForm.method,
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    formStatus.innerHTML = "Terima kasih! Pesan Anda telah terkirim.";
+                    formStatus.style.color = "var(--primary-color)";
+                    contactForm.reset();
+                } else {
+                    const responseData = await response.json();
+                    if (Object.hasOwn(responseData, 'errors')) {
+                        formStatus.innerHTML = responseData["errors"].map(error => error["message"]).join(", ");
+                    } else {
+                        formStatus.innerHTML = "Oops! Terjadi masalah saat mengirim formulir.";
+                    }
+                    formStatus.style.color = "#ff4d4d";
+                }
+            } catch (error) {
+                formStatus.innerHTML = "Oops! Terjadi masalah jaringan.";
+                formStatus.style.color = "#ff4d4d";
+            }
+        }
+        contactForm.addEventListener("submit", handleSubmit);
+    }
+
     // --- LOGIKA ANIMASI SAAT SCROLL (INTERSECTION OBSERVER) ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -118,4 +193,4 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const revealElements = document.querySelectorAll('.reveal');
     revealElements.forEach(el => observer.observe(el));
-});
+}); 
